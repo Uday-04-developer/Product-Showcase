@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Showcase - Premium Collection</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="practice.css" />
+  </head>
+  <body>
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Cart Icon -->
+    <button class="cart-icon" onclick="toggleCart()" aria-label="Shopping Cart">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
+
+    <!-- Header -->
+    <header class="site-header">
+      <h1>Product Showcase</h1>
+      <div class="controls">
+        <div class="search-container">
+          <input
+            type="search"
+            id="search"
+            placeholder="Search products..."
+            aria-label="Search products"
+          />
+        </div>
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <i class="fas fa-sun"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- Loading -->
+    <div class="loading" id="loading">
+      <div class="spinner"></div>
+      <p>Loading amazing products...</p>
+    </div>
+
+    <!-- Main Content -->
+    <main class="products" id="products">
+      <!-- Product 1: Smartwatch -->
+      <div class="flip-card" data-category="electronics">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2899&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Awesome Gadget X"
+                class="product-image"
+              />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="product-content">
+              <h2 class="product-title">Awesome Gadget X</h2>
+              <p class="product-description">
+                Smartwatch with circular dial, fitness tracking, heart rate
+                monitor, and smart alerts.
+              </p>
+              <div class="price-rating">
+                <span class="price">$49.99</span>
+                <div class="rating">★★★★☆</div>
+              </div>
+              <div class="card-actions">
+                <button
+                  class="btn"
+                  onclick="addToCart('Awesome Gadget X', 49.99, 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=2899&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                >
+                  <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button
+                  class="btn btn-secondary"
+                  onclick="buyNow('Awesome Gadget X', 49.99)"
+                >
+                  <i class="fas fa-bolt"></i> Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <h2>Product Details</h2>
+            <ul class="details-list">
+              <li>1.3" HD circular touch screen</li>
+              <li>Heart rate, sleep, and step tracking</li>
+              <li>Smart notifications via Bluetooth</li>
+              <li>Up to 7-day battery life</li>
+              <li>IP68 water resistant</li>
+              <li>Compatible with Android and iOS</li>
+            </ul>
+            <div class="customer-reviews">
+              <h3>Customer Reviews</h3>
+              <div class="review">
+                <strong>★★★★★</strong> "Stylish and functional. Great battery!"
+                — Priya K.
+              </div>
+              <div class="review">
+                <strong>★★★★☆</strong> "Perfect for workouts. Good value." —
+                Ramesh D.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 2: Headphones -->
+      <div class="flip-card" data-category="electronics">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="AukTic Headphones"
+                class="product-image"
+              />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="product-content">
+              <h2 class="product-title">AukTic Headphones</h2>
+              <p class="product-description">
+                Crystal-clear sound, sleek design, wireless comfort, and all-day
+                battery life.
+              </p>
+              <div class="price-rating">
+                <span class="price">$19.99</span>
+                <div class="rating">★★★☆☆</div>
+              </div>
+              <div class="card-actions">
+                <button
+                  class="btn"
+                  onclick="addToCart('AukTic Headphones', 19.99, 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                >
+                  <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button
+                  class="btn btn-secondary"
+                  onclick="buyNow('AukTic Headphones', 19.99)"
+                >
+                  <i class="fas fa-bolt"></i> Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <h2>Product Details</h2>
+            <ul class="details-list">
+              <li>High-definition stereo sound</li>
+              <li>Wireless Bluetooth 5.0 connectivity</li>
+              <li>Comfortable over-ear design</li>
+              <li>20-hour battery life</li>
+              <li>Built-in microphone for calls</li>
+              <li>Foldable and portable</li>
+            </ul>
+            <div class="customer-reviews">
+              <h3>Customer Reviews</h3>
+              <div class="review">
+                <strong>★★★★☆</strong> "Good sound quality for the price." —
+                Amit S.
+              </div>
+              <div class="review">
+                <strong>★★★☆☆</strong> "Decent but could be better." — Neha M.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 3: Smartphone -->
+      <div class="flip-card" data-category="electronics">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Super Phone Pro"
+                class="product-image"
+              />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="product-content">
+              <h2 class="product-title">Super Phone Pro</h2>
+              <p class="product-description">
+                Flagship smartphone with advanced camera, powerful processor,
+                and stunning display.
+              </p>
+              <div class="price-rating">
+                <span class="price">$799.99</span>
+                <div class="rating">★★★★★</div>
+              </div>
+              <div class="card-actions">
+                <button
+                  class="btn"
+                  onclick="addToCart('Super Phone Pro', 799.99, 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                >
+                  <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button
+                  class="btn btn-secondary"
+                  onclick="buyNow('Super Phone Pro', 799.99)"
+                >
+                  <i class="fas fa-bolt"></i> Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <h2>Product Details</h2>
+            <ul class="details-list">
+              <li>6.7" OLED display with 120Hz refresh rate</li>
+              <li>Triple camera system with AI enhancement</li>
+              <li>Flagship processor with 12GB RAM</li>
+              <li>256GB storage with expandable option</li>
+              <li>5000mAh battery with fast charging</li>
+              <li>5G connectivity and wireless charging</li>
+            </ul>
+            <div class="customer-reviews">
+              <h3>Customer Reviews</h3>
+              <div class="review">
+                <strong>★★★★★</strong> "Best phone I've ever owned!" — Rajesh P.
+              </div>
+              <div class="review">
+                <strong>★★★★★</strong> "Camera quality is amazing." — Sunita L.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 4: Laptop -->
+      <div class="flip-card" data-category="electronics">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Ultra Book Air"
+                class="product-image"
+              />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="product-content">
+              <h2 class="product-title">Ultra Book Air</h2>
+              <p class="product-description">
+                Lightweight laptop with powerful performance, perfect for work
+                and creativity.
+              </p>
+              <div class="price-rating">
+                <span class="price">$1299.99</span>
+                <div class="rating">★★★★☆</div>
+              </div>
+              <div class="card-actions">
+                <button
+                  class="btn"
+                  onclick="addToCart('Ultra Book Air', 1299.99, 'https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=2942&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                >
+                  <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button
+                  class="btn btn-secondary"
+                  onclick="buyNow('Ultra Book Air', 1299.99)"
+                >
+                  <i class="fas fa-bolt"></i> Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <h2>Product Details</h2>
+            <ul class="details-list">
+              <li>13.3" Retina display with True Tone</li>
+              <li>M2 chip with 8-core CPU and GPU</li>
+              <li>16GB unified memory, 512GB SSD</li>
+              <li>Up to 18 hours battery life</li>
+              <li>Backlit Magic Keyboard</li>
+              <li>Touch ID and Face ID support</li>
+            </ul>
+            <div class="customer-reviews">
+              <h3>Customer Reviews</h3>
+              <div class="review">
+                <strong>★★★★★</strong> "Perfect for my design work!" — Kavya R.
+              </div>
+              <div class="review">
+                <strong>★★★★☆</strong> "Great performance but pricey." — Vikram
+                T.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product 5: Gaming Console -->
+      <div class="flip-card" data-category="gaming">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <div class="image-container">
+              <img
+                src="https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Game Station X"
+                class="product-image"
+              />
+              <div class="image-overlay"></div>
+            </div>
+            <div class="product-content">
+              <h2 class="product-title">Game Station X</h2>
+              <p class="product-description">
+                Next-gen gaming console with 4K graphics, immersive gameplay,
+                and exclusive titles.
+              </p>
+              <div class="price-rating">
+                <span class="price">$499.99</span>
+                <div class="rating">★★★★★</div>
+              </div>
+              <div class="card-actions">
+                <button
+                  class="btn"
+                  onclick="addToCart('Game Station X', 499.99, 'https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+                >
+                  <i class="fas fa-shopping-cart"></i> Add to Cart
+                </button>
+                <button
+                  class="btn btn-secondary"
+                  onclick="buyNow('Game Station X', 499.99)"
+                >
+                  <i class="fas fa-bolt"></i> Buy Now
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <h2>Product Details</h2>
+            <ul class="details-list">
+              <li>4K Ultra HD gaming with HDR support</li>
+              <li>Custom 8-core processor</li>
+              <li>1TB SSD with expandable storage</li>
+              <li>Ray tracing and 120fps gaming</li>
+              <li>Wireless controller with haptic feedback</li>
+              <li>Backward compatibility with older games</li>
+            </ul>
+            <div class="customer-reviews">
+              <h3>Customer Reviews</h3>
+              <div class="review">
+                <strong>★★★★★</strong> "Gaming experience is incredible!" —
+                Arjun K.
+              </div>
+              <div class="review">
+                <strong>★★★★★</strong> "Worth every rupee spent." — Deepika S.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+      <h2>Shopping Cart</h2>
+      <div id="cart-items"></div>
+      <div class="cart-total" id="cart-total">Total: ₹0.00</div>
+      <button
+        class="btn"
+        style="width: 100%; margin-top: 2rem"
+        onclick="checkout()"
+      >
+        <i class="fas fa-credit-card"></i> Checkout
+      </button>
+    </div>
+
+    <!-- Success/Error Message -->
+    <div class="message" id="message"></div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2024 Product Showcase. All rights reserved.</p>
+      <p>Made with ❤️ for amazing shopping experience</p>
+      <p>
+        <a href="#" onclick="showContact()">Contact Us</a> |
+        <a href="#" onclick="showPrivacy()">Privacy Policy</a>
+      </p>
+    </footer>
+
+    <script>
+      // Global variables
+      let cart = [];
+      let isCartOpen = false;
+      let isDarkMode = true;
+
+      // Initialize the page
+      document.addEventListener("DOMContentLoaded", function () {
+        createParticles();
+        initializeSearch();
+        initializeThemeToggle();
+        updateCartCount();
+
+        // Simulate loading
+        setTimeout(() => {
+          document.getElementById("loading").classList.remove("show");
+        }, 1500);
+      });
+
+      // Create floating particles
+      function createParticles() {
+        const particlesContainer = document.getElementById("particles");
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+          const particle = document.createElement("div");
+          particle.className = "particle";
+
+          // Random size between 2-6px
+          const size = Math.random() * 4 + 2;
+          particle.style.width = size + "px";
+          particle.style.height = size + "px";
+
+          // Random position
+          particle.style.left = Math.random() * 100 + "%";
+          particle.style.top = Math.random() * 100 + "%";
+
+          // Random animation delay
+          particle.style.animationDelay = Math.random() * 6 + "s";
+          particle.style.animationDuration = Math.random() * 3 + 3 + "s";
+
+          particlesContainer.appendChild(particle);
+        }
+      }
+
+      // Search functionality
+      function initializeSearch() {
+        const searchInput = document.getElementById("search");
+        const productCards = document.querySelectorAll(".flip-card");
+
+        searchInput.addEventListener("input", function () {
+          const searchTerm = this.value.toLowerCase().trim();
+
+          productCards.forEach((card) => {
+            const title = card
+              .querySelector(".product-title")
+              .textContent.toLowerCase();
+            const description = card
+              .querySelector(".product-description")
+              .textContent.toLowerCase();
+
+            if (
+              title.includes(searchTerm) ||
+              description.includes(searchTerm) ||
+              searchTerm === ""
+            ) {
+              card.style.display = "block";
+              card.style.animation = "cardAppear 0.5s ease-out forwards";
+            } else {
+              card.style.display = "none";
+            }
+          });
+
+          // Show message if no results
+          const visibleCards = Array.from(productCards).filter(
+            (card) => card.style.display !== "none"
+          );
+          if (visibleCards.length === 0 && searchTerm !== "") {
+            showMessage("No products found matching your search.", "error");
+          }
+        });
+      }
+
+      // Theme toggle functionality
+      function initializeThemeToggle() {
+        const themeToggle = document.getElementById("theme-toggle");
+        const themeIcon = themeToggle.querySelector("i");
+
+        themeToggle.addEventListener("click", function () {
+          isDarkMode = !isDarkMode;
+          document.body.classList.toggle("light-mode", !isDarkMode);
+
+          // Update icon
+          themeIcon.className = isDarkMode ? "fas fa-sun" : "fas fa-moon";
+
+          // Show feedback
+          showMessage(
+            `Switched to ${isDarkMode ? "dark" : "light"} mode`,
+            "success"
+          );
+        });
+      }
+
+      // Cart functionality
+      function addToCart(name, price, image) {
+        const existingItem = cart.find((item) => item.name === name);
+
+        if (existingItem) {
+          existingItem.quantity += 1;
+          showMessage(`Updated ${name} quantity in cart!`, "success");
+        } else {
+          cart.push({
+            name: name,
+            price: price,
+            image: image,
+            quantity: 1,
+          });
+          showMessage(`${name} added to cart!`, "success");
+        }
+
+        updateCartCount();
+        updateCartDisplay();
+      }
+
+      function removeFromCart(name) {
+        cart = cart.filter((item) => item.name !== name);
+        updateCartCount();
+        updateCartDisplay();
+        showMessage("Item removed from cart", "success");
+      }
+
+      function updateCartCount() {
+        const cartCount = document.getElementById("cart-count");
+        const totalItems = cart.reduce(
+          (total, item) => total + item.quantity,
+          0
+        );
+        cartCount.textContent = totalItems;
+
+        // Animate cart icon if items added
+        if (totalItems > 0) {
+          cartCount.style.display = "flex";
+        } else {
+          cartCount.style.display = "none";
+        }
+      }
+
+      function updateCartDisplay() {
+        const cartItems = document.getElementById("cart-items");
+        const cartTotal = document.getElementById("cart-total");
+
+        if (cart.length === 0) {
+          cartItems.innerHTML =
+            '<p style="text-align: center; opacity: 0.7; margin: 2rem 0;">Your cart is empty</p>';
+          cartTotal.textContent = "Total: ₹0.00";
+          return;
+        }
+
+        cartItems.innerHTML = "";
+        let total = 0;
+
+        cart.forEach((item) => {
+          const cartItem = document.createElement("div");
+          cartItem.className = "cart-item";
+          cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div style="flex-grow: 1;">
+                        <h4>${item.name}</h4>
+                        <p>₹${item.price.toFixed(2)} x ${item.quantity}</p>
+                    </div>
+                    <button onclick="removeFromCart('${
+                      item.name
+                    }')" style="background: var(--accent-secondary); color: white; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer;">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+          cartItems.appendChild(cartItem);
+          total += item.price * item.quantity;
+        });
+
+        cartTotal.textContent = `Total: ₹${total.toFixed(2)}`;
+      }
+
+      function toggleCart() {
+        const cartModal = document.getElementById("cart-modal");
+        isCartOpen = !isCartOpen;
+
+        if (isCartOpen) {
+          cartModal.classList.add("open");
+          updateCartDisplay();
+        } else {
+          cartModal.classList.remove("open");
+        }
+      }
+
+      function buyNow(name, price) {
+        showMessage(`Redirecting to checkout for ${name}...`, "success");
+        setTimeout(() => {
+          alert(
+            `This would redirect to payment gateway for ${name} (₹${price})`
+          );
+        }, 1000);
+      }
+
+      function checkout() {
+        if (cart.length === 0) {
+          showMessage("Your cart is empty!", "error");
+          return;
+        }
+
+        const total = cart.reduce(
+          (sum, item) => sum + item.price * item.quantity,
+          0
+        );
+        showMessage("Redirecting to payment gateway...", "success");
+
+        setTimeout(() => {
+          alert(
+            `Checkout completed! Total: ₹${total.toFixed(
+              2
+            )}\nThank you for your purchase!`
+          );
+          cart = [];
+          updateCartCount();
+          updateCartDisplay();
+          toggleCart();
+        }, 2000);
+      }
+
+      // Utility functions
+      function showMessage(text, type) {
+        const message = document.getElementById("message");
+        message.textContent = text;
+        message.className = `message ${type}`;
+        message.classList.add("show");
+
+        setTimeout(() => {
+          message.classList.remove("show");
+        }, 3000);
+      }
+
+      function showContact() {
+        alert(
+          "Contact Us:\nEmail: udaykelodiya@gmail.com\nPhone: +91-6264648711\nAddress: Sehore, Madhya Pradesh, MP 466001"
+        );
+      }
+
+      function showPrivacy() {
+        alert(
+          "Privacy Policy:\nWe respect your privacy and protect your personal information. All transactions are secure and encrypted."
+        );
+      }
+
+      // Close cart when clicking outside
+      document.addEventListener("click", function (event) {
+        const cartModal = document.getElementById("cart-modal");
+        const cartIcon = document.querySelector(".cart-icon");
+
+        if (
+          isCartOpen &&
+          !cartModal.contains(event.target) &&
+          !cartIcon.contains(event.target)
+        ) {
+          toggleCart();
+        }
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && isCartOpen) {
+          toggleCart();
+        }
+      });
+
+      // Performance optimization - Intersection Observer for animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.animationPlayState = "running";
+          }
+        });
+      }, observerOptions);
+
+      // Observe all flip cards for performance
+      document.querySelectorAll(".flip-card").forEach((card) => {
+        observer.observe(card);
+      });
+      // Add click event listeners to flip cards
+      document.addEventListener("DOMContentLoaded", function () {
+        const flipCards = document.querySelectorAll(".flip-card");
+
+        flipCards.forEach((card) => {
+          card.addEventListener("click", function (e) {
+            // Don't flip if clicking on buttons
+            if (e.target.closest(".btn")) {
+              return;
+            }
+
+            // Toggle the flipped class
+            this.classList.toggle("flipped");
+          });
+        });
+
+        // Optional: Close flip when clicking outside
+        document.addEventListener("click", function (e) {
+          if (!e.target.closest(".flip-card")) {
+            flipCards.forEach((card) => {
+              card.classList.remove("flipped");
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
