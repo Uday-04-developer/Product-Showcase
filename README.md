@@ -1,6 +1,6 @@
 # 🚀 Futuristic Product Showcase Website
 
-Welcome to my **final year project** – a responsive, visually dynamic **Product Showcase Website** featuring 3D flip cards, dark/light theme toggling, animations, and modern UI/UX principles.
+Welcome to my **project** – a responsive, visually dynamic **Product Showcase Website** featuring 3D flip cards, dark/light theme toggling, animations, and modern UI/UX principles.
 
  <!-- Optional: Add a screenshot image of your site -->
  
