@@ -2,7 +2,21 @@
 
 Welcome to my **project** – a responsive, visually dynamic **Product Showcase Website** featuring 3D flip cards, dark/light theme toggling, animations, and modern UI/UX principles.
 
- <!-- Optional: Add a screenshot image of your site -->
+Hey everyone,
+I just completed my responsive, animated Product Showcase Website that includes:
+
+Key Features:
+    •    3D Flip Cards — click to view more product details
+    •    Dark/Light Theme Toggle
+    •    Live Search Filtering
+    •    Neon and Glassmorphism UI Design
+    •    Fully Responsive across mobile, tablet, and desktop
+    •    Floating Cart Button (demo only)
+
+Live Demo:
+> https://68380bebedb24b9cc45b4973--stellular-pavlova-2e075d.netlify.app/
+
+
  
 
 ---
